@@ -1,0 +1,203 @@
+<!doctype html>
+
+<html>
+
+    <head>
+
+        <title> dice game </title>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+        <style type="text/css">
+            body{
+                background-color: rgb(128, 0, 0);
+            } 
+            .tab{
+                background-color: #009252;
+                width: 320px;
+                height: 160px;
+                background: #009252;
+                border-radius: 80px;
+                position: fixed;
+                top: 50%;
+                right: 50%;
+                bottom: 50%;
+                left: 50%;
+            }
+            .dp1{
+                position: absolute;
+                top: none;
+                right: 50.5%;
+                bottom: none;
+                left: none;
+            }
+            .dp2{
+                position: absolute;
+                top: none;
+                right: 40.5%;
+                bottom: none;
+                left: none;
+                display: block;
+            }
+            #d2{
+                display: none;
+            }
+            
+            
+
+           
+        
+        </style>  
+
+    </head>
+
+    <body>
+
+        <div class="tab" id="table">
+            <div class="dp1" id="diceposition1">
+               
+                    <img src="DICE1.png" class="d1" id="dice1" width="25" height="25" hidden >
+            
+                    <img src="DICE2.png" class="d21" id="d2" width="25" height="25"  >
+                
+                    <img src="DICE3.png" class="d3" id="dice3" width="25" height="25" hidden >
+                
+                    <img src="DICE4.png" class="d4" id="dice4" width="25" height="25" hidden >
+            
+                    <img src="DICE5.png" class="d5" id="dice5" width="25" height="25" hidden >
+        
+                    <img src="DICE6.png" class="d6" id="dice6" width="25" height="25" hidden >
+                
+            </div>
+<!--
+            <div class="dp2" id="diceposition2">
+
+                    <img src="DICE1.png" class="d1" id="dice1" width="25" height="25" hidden >
+            
+                    <img src="DICE2.png" class="d2" id="dice2" width="25" height="25"  >
+                
+                    <img src="DICE3.png" class="d3" id="dice3" width="25" height="25" hidden >
+                
+                    <img src="DICE4.png" class="d4" id="dice4" width="25" height="25" hidden >
+            
+                    <img src="DICE5.png" class="d5" id="dice5" width="25" height="25" hidden >
+        
+                    <img src="DICE6.png" class="d6" id="dice6" width="25" height="25" hidden >
+
+            </div>-->
+
+
+
+            
+        </div>
+        
+
+<!--
+        <div class="d1" id="dice1">
+            <img src="DICE1.png" width="100" height="100" hidden >
+        </div>
+
+
+        <div class="d2" id="dice2">
+            <img src="DICE2.png" width="100" height="100" hidden >
+        </div>
+
+        <div class="d3" id="dice3"> 
+            <img src="DICE3.png" width="100" height="100" hidden >
+        </div>
+
+        <div class="d4" id="dice4">
+            <img src="DICE4.png" width="100" height="100" hidden >
+        </div>
+
+        <div class="d5" id="dice5">
+            <img src="DICE5.png" width="100" height="100" hidden >
+        </div>
+
+        <div class="d6" id="dice6">
+            <img src="DICE6.png" width="100" height="100" hidden >
+        </div>
+-->
+
+        <div id="guess">
+            <form>
+                <p>guess the number that the dice will land on guess1</p>
+                <p><select id="guess1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                </select>
+
+                <p>guess the number that the dice will land on guess2</p>
+                <p><select id="guess2">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                </select>
+
+                <button id="check" onclick="toggleNav()" >check</button>
+            </form>
+            
+        </div>
+
+        
+
+        
+        <script type="text/javascript">
+            document.getElementById("check").onclick = function() {
+                document.getElementById("d2").style.display = "none";
+
+
+                var u1 = document.getElementById("guess1").value;
+                var u2 = document.getElementById("guess2").value;
+
+                //var dicenumber1 = Math.floor(Math.random() * 6) + 1;
+                //var dicenumber2 = Math.floor(Math.random() * 6) + 1;
+
+                var dicenumber1 = 1;
+                var dicenumber2 = 6;
+                
+                if(u1 == dicenumber1 && u2 == dicenumber2 || u1 == dicenumber2 && u2 == dicenumber1){
+                    //alert("nice");
+                }
+                else if(u1 != dicenumber1 && u2 == dicenumber2 || u2 != dicenumber2 && u1 == dicenumber1 || u1 != dicenumber2 && u2 == dicenumber1 || u2 != dicenumber1 && u1 == dicenumber2){
+                    //alert("1 out of 2");
+                }
+                //else(){
+                   // alert ("better luck next time");
+               // };
+
+                //alert("guess1, " + u1);
+                //alert("guess2, " + u2);
+                //alert("dice1, " + dicenumber1);
+                //alert("dice2, " + dicenumber2);
+            }
+
+                //function toggleNav() {
+                  //  var element1 = document.getElementById("dice2");
+                    //if (element1.style.display == "block") {
+                      //  element1.style.display = "none";
+                   // } else {
+                        
+                    //};
+
+            //}
+            var die1 = ""
+            var die2 = ""
+   
+
+
+    
+        </script>
+
+    </body>
+
+</html>
